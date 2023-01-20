@@ -4,11 +4,15 @@ function getComputerChoice() {
         'Paper',
         'Scissors'
     ];
-    let randomChoice = gameOptions[Math.floor(Math.random() * gameOptions.length)];
-    return randomChoice;
+    let randomSelection = gameOptions[Math.floor(Math.random() * gameOptions.length)];
+    return randomSelection;
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
+
+    let playerSelection = prompt("Choose rock, paper, or scissors");
+
+    let computerSelection = getComputerChoice();
 
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "Rock") {
@@ -38,5 +42,13 @@ function playRound(playerSelection, computerSelection) {
         }
     } else {
         return "You must choose rock, paper, or scissors.";
+    }
+}
+
+function game () {
+    // Call playRound function inside of game to play a 5 round game that keeps score and reports a winner or loser at the end.
+    for (let i = 0; i < 5; i++) { // i is a variable, starting from 0. i < 5 is our condition for the loop. i++ is saying that we increment i by 1 every iteration.
+        // your code here!
+        playRound();
     }
 }
