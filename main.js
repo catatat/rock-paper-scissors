@@ -46,9 +46,7 @@ function playRound() {
 }
 
 function game () {
-    // Call playRound function inside of game to play a 5 round game that keeps score and reports a winner or loser at the end.
-    for (let i = 0; i < 5; i++) { // i is a variable, starting from 0. i < 5 is our condition for the loop. i++ is saying that we increment i by 1 every iteration.
-        // your code here!
+    for (let i = 0; i < 5; i++) { 
         playRound();
     }
 }
