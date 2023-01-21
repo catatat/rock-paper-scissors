@@ -16,37 +16,43 @@ function playRound() {
 
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "Rock") {
-            return "It's a tie!";
+            alert("It's a tie!");
         } else if (computerSelection == "Paper") {
-            return "You lose! Paper beats rock.";
+            alert("You lose! Paper beats rock.");
         } else {
-            return "You win! Rock beats scissors.";
+            alert("You win! Rock beats scissors.");
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "Rock") {
-            return "You win! Paper beats rock.";
+            alert("You win! Paper beats rock.");
         } else if (computerSelection == "Paper") {
-            return "It's a tie!";
+            alert("It's a tie!");
         } else {
-            return "You lose! Scissors beat paper.";
+            alert("You lose! Scissors beat paper.");
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "Rock") {
-            return "You lose! Rock beats scissors";
+            alert("You lose! Rock beats scissors");
         }
         else if (computerSelection == "Paper") {
-            return "You win! Scissors beat paper.";
+            alert("You win! Scissors beat paper.");
         }
         else {
-            return "It's a tie!";
+            alert("It's a tie!");
         }
     } else {
-        return "You must choose rock, paper, or scissors.";
+        alert("You must choose rock, paper, or scissors.");
+        let playerSelection = prompt("Choose rock, paper, or scissors"); // I'm not sure if I need this line.
     }
 }
 
 function game () {
+    let playerScore = 0;
+    let computerScore = 0;
+
     for (let i = 0; i < 5; i++) { 
         playRound();
     }
 }
+
+console.log(game());
