@@ -17,52 +17,53 @@ function playRound() {
 
     let computerSelection = getComputerChoice();
 
-    let playerWin;
-
-    let computerWin;
-
     if (playerSelection.toLowerCase() == "rock") {
         if (computerSelection == "Rock") {
-            alert("It's a tie!");
+            alert(`It's a tie! \nPlayer: ${playerScore}. Computer: ${computerScore}`);
         } else if (computerSelection == "Paper") {
-            alert("You lose! Paper beats rock.");
-            return ++computerScore;
+            ++computerScore;
+            alert(`You lose! \nPaper beats rock. Player: ${playerScore}. Computer: ${computerScore}`);
         } else {
-            alert("You win! Rock beats scissors.");
-            return ++playerScore;
+            ++playerScore;
+            alert(`You win! \nRock beats scissors. Player: ${playerScore}. Computer: ${computerScore}`);
         }
     } else if (playerSelection.toLowerCase() == "paper") {
         if (computerSelection == "Rock") {
-            alert("You win! Paper beats rock.");
-            return ++playerScore;
+            ++playerScore;
+            alert(`You win! \nPaper beats rock. Player: ${playerScore}. Computer: ${computerScore}`);
         } else if (computerSelection == "Paper") {
-            alert("It's a tie!");
+            alert(`It's a tie! \nPlayer: ${playerScore}. Computer: ${computerScore}`);
         } else {
-            alert("You lose! Scissors beat paper.");
-            return ++computerScore;
+            ++computerScore;
+            alert(`You lose! \nScissors beat paper. Player: ${playerScore}. Computer: ${computerScore}`);
         }
     } else if (playerSelection.toLowerCase() == "scissors") {
         if (computerSelection == "Rock") {
-            alert("You lose! Rock beats scissors");
-            return ++computerScore;
+            ++computerScore;
+            alert(`You lose! \nRock beats scissors. Player: ${playerScore}. Computer: ${computerScore}`);
         }
         else if (computerSelection == "Paper") {
-            alert("You win! Scissors beat paper.");
-            return ++playerScore;
+            ++playerScore;
+            alert(`You win! \nScissors beat paper. Player: ${playerScore}. Computer: ${computerScore}`);
         }
         else {
-            alert("It's a tie!");
+            alert(`It's a tie! \nPlayer: ${playerScore}. Computer: ${computerScore}`);
         }
     } else {
         alert("You must choose rock, paper, or scissors.");
-        let playerSelection = prompt("Choose rock, paper, or scissors"); // I'm not sure if I need this line.
+        playRound();
     }
 }
 
 function game () {
     for (let i = 0; i < 5; i++) { 
         playRound();
-        alert(`Player: ${playerScore}. Computer: ${computerScore}`);
+    }
+    if (playerScore > computerScore) {
+        alert(`You win the game! \nPlayer: ${playerScore}. Computer: ${computerScore}`);
+    }
+    else {
+        alert(`Better luck next time. \nPlayer: ${playerScore}. Computer: ${computerScore}`);
     }
 }
 
